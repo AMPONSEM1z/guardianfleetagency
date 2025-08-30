@@ -152,7 +152,7 @@ Tracking Number: ${data.tracking_number}
 Status: ${data.status.toUpperCase()}
 Update: ${data.event_description}
 
-Track: https://guardianfleetagency.netlify.app//track?tracking=${
+Track: https://guardianfleetagency.netlify.app/track?tracking=${
     data.tracking_number
   }
   `;
