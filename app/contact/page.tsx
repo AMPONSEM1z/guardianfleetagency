@@ -253,13 +253,13 @@ export default function ContactPage() {
                   >
                     <a href="/services">View Our Services</a>
                   </Button>
-                  <Button
+                  {/* <Button
                     asChild
                     variant="outline"
                     className="w-full border-gold text-gold hover:bg-gold hover:text-navy bg-transparent"
                   >
                     <a href="/admin">Admin Portal</a>
-                  </Button>
+                  </Button> */}
                 </CardContent>
               </Card>
             </div>
