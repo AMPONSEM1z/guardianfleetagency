@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   title: "guardianfleetagency - Military-Grade Shipping & Logistics",
   description:
     "Professional shipping and tracking services with military precision and reliability",
-  generator: "v0.app",
+  generator: "kojo Amponsem",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
