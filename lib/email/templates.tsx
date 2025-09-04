@@ -88,7 +88,7 @@ export function getShipmentCreatedTemplate(
     <body>
       <div class="container">
         <div class="header">
-          <div class="logo">🛡️ GuardFleetAgency</div>
+          <div class="logo">🛡️ GuardianFleetAgency</div>
           <h1>Shipment Created Successfully</h1>
         </div>
         
@@ -121,7 +121,7 @@ export function getShipmentCreatedTemplate(
           <p>You can track your package anytime using the tracking number above.</p>
           
           <div style="text-align: center;">
-            <a href="https://guardfleetagency.com/track?tracking=${
+            <a href="https://guardianfleetagency.com/track?tracking=${
               data.tracking_number
             }" class="button">Track Your Package</a>
           </div>
@@ -130,8 +130,8 @@ export function getShipmentCreatedTemplate(
         </div>
         
         <div class="footer">
-          <p><strong>GuardFleetAgency</strong> - Military-Grade Shipping & Logistics</p>
-          <p>📞 1-800-GUARD-FL | 📧 info@guardfleetagency.com</p>
+          <p><strong>GuardianFleetAgency</strong> - Military-Grade Shipping & Logistics</p>
+          <p>📞 1-800-GUARD-FL | 📧 info@guardianfleetagency.com</p>
           <p>This is an automated message. Please do not reply to this email.</p>
         </div>
       </div>
@@ -140,7 +140,7 @@ export function getShipmentCreatedTemplate(
   `;
 
   const text = `
-GuardFleetAgency - Shipment Created
+GuardianFleetAgency - Shipment Created
 
 Dear ${data.recipient_name},
 
@@ -151,7 +151,7 @@ Service Type: ${formatServiceType(data.service_type)}
 Estimated Delivery: ${formatDate(data.estimated_delivery_date)}
 From: ${data.sender_name}
 
-Track your package: https://guardfleetagency.netlify.app/track?tracking=${
+Track your package: https://guardianfleetagency.com/track?tracking=${
     data.tracking_number
   }
 
@@ -195,7 +195,7 @@ export function getStatusUpdateTemplate(data: StatusUpdateData): EmailTemplate {
     <body>
       <div class="container">
         <div class="header">
-          <div class="logo">🛡️ GuardFleetAgency</div>
+          <div class="logo">🛡️ GuardianFleetAgency</div>
           <h1>Shipment Status Update</h1>
         </div>
         
@@ -226,7 +226,7 @@ export function getStatusUpdateTemplate(data: StatusUpdateData): EmailTemplate {
           </div>
           
           <div style="text-align: center;">
-            <a href="https://guardfleetagency.com/track?tracking=${
+            <a href="https://guardianfleetagency.com/track?tracking=${
               data.tracking_number
             }" class="button">View Full Tracking Details</a>
           </div>
@@ -245,7 +245,7 @@ export function getStatusUpdateTemplate(data: StatusUpdateData): EmailTemplate {
   `;
 
   const text = `
-GuardFleetAgency - Shipment Update
+GuardianFleetAgency - Shipment Update
 
 Dear ${data.recipient_name},
 
@@ -260,16 +260,16 @@ ${
     : ""
 }
 
-Track your package: https://guardfleetagency.com/track?tracking=${
+Track your package: https://guardianfleetagency.com/track?tracking=${
     data.tracking_number
   }
 
-Thank you for choosing GuardFleetAgency!
+Thank you for choosing GuardianFleetAgency!
 
 ---
-GuardFleetAgency - Military-Grade Shipping & Logistics
+GuardianFleetAgency - Military-Grade Shipping & Logistics
 Phone: 1-800-GUARD-FL
-Email: info@guardfleetagency.com
+Email: info@guardianfleetagency.com
   `;
 
   return { subject, html, text };
@@ -304,7 +304,7 @@ export function getDeliveryConfirmationTemplate(
     <body>
       <div class="container">
         <div class="header">
-          <div class="logo">🛡️ GuardFleetAgency</div>
+          <div class="logo">🛡️ GuardianFleetAgency</div>
           <h1>Package Delivered Successfully!</h1>
         </div>
         
@@ -329,7 +329,7 @@ export function getDeliveryConfirmationTemplate(
           <p>Mission accomplished! Your package has reached its destination safely, handled with the precision and care that defines GuardFleetAgency.</p>
           
           <div style="text-align: center;">
-            <a href="https://guardfleetagency.com/track?tracking=${
+            <a href="https://guardianfleetagency.com/track?tracking=${
               data.tracking_number
             }" class="button">View Delivery Details</a>
           </div>
@@ -338,13 +338,13 @@ export function getDeliveryConfirmationTemplate(
           
           <p style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; font-size: 14px; color: #666;">
             <strong>Rate Your Experience:</strong> Help us improve our service by sharing your feedback at 
-            <a href="https://guardfleetagency.com/feedback" style="color: #1a365d;">guardfleetagency.com/feedback</a>
+            <a href="https://guardianfleetagency.com/feedback" style="color: #1a365d;">guardfleetagency.com/feedback</a>
           </p>
         </div>
         
         <div class="footer">
-          <p><strong>GuardFleetAgency</strong> - Military-Grade Shipping & Logistics</p>
-          <p>📞 1-800-GUARD-FL | 📧 info@guardfleetagency.com</p>
+          <p><strong>GuardianFleetAgency</strong> - Military-Grade Shipping & Logistics</p>
+          <p>📞 1-800-GUARD-FL | 📧 info@guardianfleetagency.com</p>
           <p>This is an automated message. Please do not reply to this email.</p>
         </div>
       </div>
@@ -365,18 +365,18 @@ Tracking Number: ${data.tracking_number}
 Delivery Date: ${formatDate(data.delivery_date)}
 Delivery Location: ${data.delivery_location}
 
-View delivery details: https://guardfleetagency.com/track?tracking=${
+View delivery details: https://guardianfleetagency.com/track?tracking=${
     data.tracking_number
   }
 
 Thank you for choosing GuardFleetAgency!
 
-Rate your experience: https://guardfleetagency.com/feedback
+Rate your experience: https://guardianfleetagency.com/feedback
 
 ---
 GuardFleetAgency - Military-Grade Shipping & Logistics
 Phone: 1-800-GUARD-FL
-Email: info@guardfleetagency.com
+Email: info@guardianfleetagency.com
   `;
 
   return { subject, html, text };

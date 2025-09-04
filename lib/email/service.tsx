@@ -379,7 +379,7 @@ export async function sendSenderNotificationEmail(data: {
           <p><strong>Status:</strong> ${data.status.toUpperCase()}</p>
           <p><strong>Update:</strong> ${data.event_description}</p>
         </div>
-        <p>Track the shipment: <a href="https://guardianfleetagency.netlify.app/track?tracking=${
+        <p>Track the shipment: <a href="https://guardianfleetagency.com/track?tracking=${
           data.tracking_number
         }">View Details</a></p>
       </div>
@@ -397,9 +397,7 @@ Tracking Number: ${data.tracking_number}
 Status: ${data.status.toUpperCase()}
 Update: ${data.event_description}
 
-Track: https://guardianfleetagency.netlify.app/track?tracking=${
-    data.tracking_number
-  }
+Track: https://guardianfleetagency.com/track?tracking=${data.tracking_number}
   `;
 
   return await sendEmail(data.sender_email, subject, html, text);
