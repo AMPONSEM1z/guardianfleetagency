@@ -12,7 +12,7 @@ INSERT INTO public.admin_users (id, email, full_name, role, is_active)
 VALUES (
   -- You'll need to get the actual user ID from auth.users after creating the auth user
   '00000000-0000-0000-0000-000000000000', -- Replace with actual user ID
-  'admin@guardfleetagency.com',
+  'admin@guardianfleetagency.com',
   'System Administrator',
   'admin',
   true

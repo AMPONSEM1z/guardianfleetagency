@@ -1,7 +1,7 @@
 -- Create admin user from existing auth user by email
 -- This script will find a user by email and give them admin privileges
 
--- Replace 'admin@guardfleetagency.com' with your actual admin email
+-- Replace 'admin@guardianfleetagency.com' with your actual admin email
 DO $$
 DECLARE
     user_uuid UUID;

@@ -11,7 +11,7 @@
 // }
 
 // const emailConfig: EmailConfig = {
-//   from: "GuardianFleetAgency@gmail.com <notifications@guardfleetagency.com>",
+//   from: "GuardianFleetAgency@gmail.com <notifications@guardianfleetagency.com>",
 //   replyTo: "support@guardianfleetagency.com",
 // };
 
@@ -123,7 +123,7 @@
 //   const html = `
 //     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
 //       <div style="background-color: #1a365d; color: white; padding: 20px; text-align: center;">
-//         <h1 style="color: #d4af37;">🛡️ GuardFleetAgency</h1>
+//         <h1 style="color: #d4af37;">🛡️ guardianfleetagency</h1>
 //         <h2>Shipment Status Update</h2>
 //       </div>
 //       <div style="padding: 20px;">
@@ -142,7 +142,7 @@
 //   `;
 
 //   const text = `
-// GuardFleetAgency - Shipment Update
+// guardianfleetagency - Shipment Update
 
 // Dear ${data.sender_name},
 
@@ -177,7 +177,7 @@
 //   const html = `
 //     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
 //       <div style="background-color: #1a365d; color: white; padding: 20px; text-align: center;">
-//         <h1 style="color: #d4af37;">🛡️ GuardFleetAgency</h1>
+//         <h1 style="color: #d4af37;">🛡️ guardianfleetagency</h1>
 //         <h2>New Contact Form Submission</h2>
 //       </div>
 //       <div style="padding: 20px;">
@@ -256,7 +256,7 @@ interface EmailConfig {
 }
 
 const emailConfig: EmailConfig = {
-  from: "GuardianFleetAgency@gmail.com <notifications@guardfleetagency.com>",
+  from: "GuardianFleetAgency@gmail.com <notifications@guardianfleetagency.com>",
   replyTo: "support@guardianfleetagency.com",
 };
 
@@ -368,7 +368,7 @@ export async function sendSenderNotificationEmail(data: {
   const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
       <div style="background-color: #1a365d; color: white; padding: 20px; text-align: center;">
-        <h1 style="color: #d4af37;">🛡️ GuardFleetAgency</h1>
+        <h1 style="color: #d4af37;">🛡️ guardianfleetagency</h1>
         <h2>Shipment Status Update</h2>
       </div>
       <div style="padding: 20px;">
@@ -387,7 +387,7 @@ export async function sendSenderNotificationEmail(data: {
   `;
 
   const text = `
-GuardFleetAgency - Shipment Update
+guardianfleetagency - Shipment Update
 
 Dear ${data.sender_name},
 
@@ -420,7 +420,7 @@ export async function sendContactEmail(data: {
   const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
       <div style="background-color: #1a365d; color: white; padding: 20px; text-align: center;">
-        <h1 style="color: #d4af37;">🛡️ GuardFleetAgency</h1>
+        <h1 style="color: #d4af37;">🛡️ guardianfleetagency</h1>
         <h2>New Contact Form Submission</h2>
       </div>
       <div style="padding: 20px;">

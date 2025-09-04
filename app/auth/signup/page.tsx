@@ -1,36 +1,42 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { createClient } from "@/lib/supabase/client"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { useState } from "react"
-import { Shield } from "lucide-react"
+import { createClient } from "@/lib/supabase/client";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { Shield } from "lucide-react";
 
 export default function SignUpPage() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [fullName, setFullName] = useState("")
-  const [repeatPassword, setRepeatPassword] = useState("")
-  const [error, setError] = useState<string | null>(null)
-  const [isLoading, setIsLoading] = useState(false)
-  const router = useRouter()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const handleSignUp = async (e: React.FormEvent) => {
-    e.preventDefault()
-    const supabase = createClient()
-    setIsLoading(true)
-    setError(null)
+    e.preventDefault();
+    const supabase = createClient();
+    setIsLoading(true);
+    setError(null);
 
     if (password !== repeatPassword) {
-      setError("Passwords do not match")
-      setIsLoading(false)
-      return
+      setError("Passwords do not match");
+      setIsLoading(false);
+      return;
     }
 
     try {
@@ -38,24 +44,26 @@ export default function SignUpPage() {
         email,
         password,
         options: {
-          emailRedirectTo: process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL || `${window.location.origin}/admin`,
+          emailRedirectTo:
+            process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL ||
+            `${window.location.origin}/admin`,
           data: {
             full_name: fullName,
           },
         },
-      })
-      if (error) throw error
+      });
+      if (error) throw error;
 
       // Note: Admin user record will be created manually by existing admins
       // This signup just creates the auth user, not the admin privileges
 
-      router.push("/auth/signup-success")
+      router.push("/auth/signup-success");
     } catch (error: unknown) {
-      setError(error instanceof Error ? error.message : "An error occurred")
+      setError(error instanceof Error ? error.message : "An error occurred");
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-navy flex items-center justify-center p-6">
@@ -64,7 +72,9 @@ export default function SignUpPage() {
           <div className="flex items-center justify-center space-x-2 mb-4">
             <Shield className="h-12 w-12 text-gold" />
             <div>
-              <h1 className="text-2xl font-bold text-gold">GuardFleetAgency</h1>
+              <h1 className="text-2xl font-bold text-gold">
+                guardianfleetagency
+              </h1>
               <p className="text-gray-300">Admin Portal</p>
             </div>
           </div>
@@ -72,8 +82,12 @@ export default function SignUpPage() {
 
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl text-navy">Request Admin Access</CardTitle>
-            <CardDescription>Create an account to request admin privileges</CardDescription>
+            <CardTitle className="text-2xl text-navy">
+              Request Admin Access
+            </CardTitle>
+            <CardDescription>
+              Create an account to request admin privileges
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSignUp}>
@@ -94,7 +108,7 @@ export default function SignUpPage() {
                   <Input
                     id="email"
                     type="email"
-                    placeholder="john@guardfleetagency.com"
+                    placeholder="john@guardianfleetagency.com"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -131,7 +145,10 @@ export default function SignUpPage() {
               </div>
               <div className="mt-4 text-center text-sm">
                 Already have an account?{" "}
-                <Link href="/auth/login" className="text-navy hover:text-army-green underline underline-offset-4">
+                <Link
+                  href="/auth/login"
+                  className="text-navy hover:text-army-green underline underline-offset-4"
+                >
                   Sign In
                 </Link>
               </div>
@@ -140,11 +157,14 @@ export default function SignUpPage() {
         </Card>
 
         <div className="mt-6 text-center">
-          <Link href="/" className="text-gray-300 hover:text-gold transition-colors text-sm">
+          <Link
+            href="/"
+            className="text-gray-300 hover:text-gold transition-colors text-sm"
+          >
             ← Back to Homepage
           </Link>
         </div>
       </div>
     </div>
-  )
+  );
 }

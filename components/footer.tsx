@@ -11,7 +11,7 @@ export function Footer() {
             <div className="flex items-center space-x-2 mb-4">
               <Shield className="h-8 w-8 text-gold" />
               <span className="text-xl font-bold text-gold">
-                GuardFleetAgency
+                guardianfleetagency
               </span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">

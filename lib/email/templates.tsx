@@ -126,7 +126,7 @@ export function getShipmentCreatedTemplate(
             }" class="button">Track Your Package</a>
           </div>
           
-          <p>We'll send you updates as your package moves through our network. Thank you for choosing GuardFleetAgency!</p>
+          <p>We'll send you updates as your package moves through our network. Thank you for choosing guardianfleetagency!</p>
         </div>
         
         <div class="footer">
@@ -155,10 +155,10 @@ Track your package: https://guardianfleetagency.com/track?tracking=${
     data.tracking_number
   }
 
-Thank you for choosing GuardFleetAgency!
+Thank you for choosing guardianfleetagency!
 
 ---
-GuardFleetAgency - Military-Grade Shipping & Logistics
+guardianfleetagency - Military-Grade Shipping & Logistics
 Phone: 1-800-GUARD-FL
 Email: info@guardianfleetagency.com
   `;
@@ -231,7 +231,7 @@ export function getStatusUpdateTemplate(data: StatusUpdateData): EmailTemplate {
             }" class="button">View Full Tracking Details</a>
           </div>
           
-          <p>Thank you for choosing GuardFleetAgency for your shipping needs!</p>
+          <p>Thank you for choosing guardianfleetagency for your shipping needs!</p>
         </div>
         
         <div class="footer">
@@ -326,7 +326,7 @@ export function getDeliveryConfirmationTemplate(
             <p><strong>Delivery Location:</strong> ${data.delivery_location}</p>
           </div>
           
-          <p>Mission accomplished! Your package has reached its destination safely, handled with the precision and care that defines GuardFleetAgency.</p>
+          <p>Mission accomplished! Your package has reached its destination safely, handled with the precision and care that defines guardianfleetagency.</p>
           
           <div style="text-align: center;">
             <a href="https://guardianfleetagency.com/track?tracking=${
@@ -334,11 +334,11 @@ export function getDeliveryConfirmationTemplate(
             }" class="button">View Delivery Details</a>
           </div>
           
-          <p>Thank you for trusting GuardFleetAgency with your shipping needs. We look forward to serving you again!</p>
+          <p>Thank you for trusting guardianfleetagency with your shipping needs. We look forward to serving you again!</p>
           
           <p style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; font-size: 14px; color: #666;">
             <strong>Rate Your Experience:</strong> Help us improve our service by sharing your feedback at 
-            <a href="https://guardianfleetagency.com/feedback" style="color: #1a365d;">guardfleetagency.com/feedback</a>
+            <a href="https://guardianfleetagency.com/feedback" style="color: #1a365d;">guardianfleetagency.com/feedback</a>
           </p>
         </div>
         
@@ -353,7 +353,7 @@ export function getDeliveryConfirmationTemplate(
   `;
 
   const text = `
-GuardFleetAgency - Package Delivered
+guardianfleetagency - Package Delivered
 
 Dear ${data.recipient_name},
 
@@ -369,12 +369,12 @@ View delivery details: https://guardianfleetagency.com/track?tracking=${
     data.tracking_number
   }
 
-Thank you for choosing GuardFleetAgency!
+Thank you for choosing guardianfleetagency!
 
 Rate your experience: https://guardianfleetagency.com/feedback
 
 ---
-GuardFleetAgency - Military-Grade Shipping & Logistics
+guardianfleetagency - Military-Grade Shipping & Logistics
 Phone: 1-800-GUARD-FL
 Email: info@guardianfleetagency.com
   `;

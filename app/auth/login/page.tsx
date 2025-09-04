@@ -1,36 +1,42 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { createClient } from "@/lib/supabase/client"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { useState } from "react"
-import { Shield } from "lucide-react"
+import { createClient } from "@/lib/supabase/client";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { Shield } from "lucide-react";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [error, setError] = useState<string | null>(null)
-  const [isLoading, setIsLoading] = useState(false)
-  const router = useRouter()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault()
-    const supabase = createClient()
-    setIsLoading(true)
-    setError(null)
+    e.preventDefault();
+    const supabase = createClient();
+    setIsLoading(true);
+    setError(null);
 
     try {
       const { error } = await supabase.auth.signInWithPassword({
         email,
         password,
-      })
-      if (error) throw error
+      });
+      if (error) throw error;
 
       // Check if user is an admin
       const { data: adminUser } = await supabase
@@ -38,20 +44,20 @@ export default function LoginPage() {
         .select("*")
         .eq("email", email)
         .eq("is_active", true)
-        .single()
+        .single();
 
       if (!adminUser) {
-        await supabase.auth.signOut()
-        throw new Error("Access denied. Admin privileges required.")
+        await supabase.auth.signOut();
+        throw new Error("Access denied. Admin privileges required.");
       }
 
-      router.push("/admin")
+      router.push("/admin");
     } catch (error: unknown) {
-      setError(error instanceof Error ? error.message : "An error occurred")
+      setError(error instanceof Error ? error.message : "An error occurred");
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-navy flex items-center justify-center p-6">
@@ -60,7 +66,9 @@ export default function LoginPage() {
           <div className="flex items-center justify-center space-x-2 mb-4">
             <Shield className="h-12 w-12 text-gold" />
             <div>
-              <h1 className="text-2xl font-bold text-gold">GuardFleetAgency</h1>
+              <h1 className="text-2xl font-bold text-gold">
+                guardianfleetagency
+              </h1>
               <p className="text-gray-300">Admin Portal</p>
             </div>
           </div>
@@ -69,7 +77,9 @@ export default function LoginPage() {
         <Card>
           <CardHeader>
             <CardTitle className="text-2xl text-navy">Admin Login</CardTitle>
-            <CardDescription>Enter your credentials to access the admin dashboard</CardDescription>
+            <CardDescription>
+              Enter your credentials to access the admin dashboard
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin}>
@@ -79,7 +89,7 @@ export default function LoginPage() {
                   <Input
                     id="email"
                     type="email"
-                    placeholder="admin@guardfleetagency.com"
+                    placeholder="admin@guardianfleetagency.com"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -106,7 +116,10 @@ export default function LoginPage() {
               </div>
               <div className="mt-4 text-center text-sm">
                 Need an admin account?{" "}
-                <Link href="/auth/signup" className="text-navy hover:text-army-green underline underline-offset-4">
+                <Link
+                  href="/auth/signup"
+                  className="text-navy hover:text-army-green underline underline-offset-4"
+                >
                   Request Access
                 </Link>
               </div>
@@ -115,11 +128,14 @@ export default function LoginPage() {
         </Card>
 
         <div className="mt-6 text-center">
-          <Link href="/" className="text-gray-300 hover:text-gold transition-colors text-sm">
+          <Link
+            href="/"
+            className="text-gray-300 hover:text-gold transition-colors text-sm"
+          >
             ← Back to Homepage
           </Link>
         </div>
       </div>
     </div>
-  )
+  );
 }
