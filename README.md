@@ -90,10 +90,10 @@ A comprehensive shipping and tracking website built with Next.js, featuring mili
 
 ## Deployment
 
-### Vercel (Recommended)
+)
 
 1. Push code to GitHub
-2. Connect repository to Vercel
+2. Connect repository 
 3. Configure environment variables in Vercel dashboard
 4. Deploy automatically
 
