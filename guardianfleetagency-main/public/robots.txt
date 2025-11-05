@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://guardianfleetagency.com
+
+# Sitemaps
+Sitemap: https://guardianfleetagency.com/sitemap.xml
