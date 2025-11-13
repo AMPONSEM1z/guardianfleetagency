@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS public.shipments (
   weight_kg DECIMAL(10,2),
   dimensions_cm VARCHAR(50), -- Format: "L x W x H"
   service_type VARCHAR(50) NOT NULL DEFAULT 'standard', -- standard, express, overnight
-  status VARCHAR(50) NOT NULL DEFAULT 'pending', -- pending, picked_up, in_transit, out_for_delivery, delivered, exception
+  status VARCHAR(50) NOT NULL DEFAULT 'pending', -- pending, picked_up, in_transit, out_for_delivery, delivered, On Hold
   estimated_delivery_date DATE,
   actual_delivery_date DATE,
   shipping_cost DECIMAL(10,2),
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS public.shipments (
 CREATE TABLE IF NOT EXISTS public.tracking_events (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   shipment_id UUID NOT NULL REFERENCES public.shipments(id) ON DELETE CASCADE,
-  event_type VARCHAR(50) NOT NULL, -- picked_up, in_transit, arrived_facility, out_for_delivery, delivered, exception
+  event_type VARCHAR(50) NOT NULL, -- picked_up, in_transit, arrived_facility, out_for_delivery, delivered, On Hold
   event_description TEXT NOT NULL,
   location VARCHAR(255),
   event_timestamp TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
