@@ -42,7 +42,7 @@ const getStatusColor = (status: string) => {
       return "bg-yellow-500 text-black";
     case "pending":
       return "bg-gray-500 text-white";
-    case "On Hold":
+    case "on hold":
       return "bg-red-500 text-white";
     default:
       return "bg-gray-500 text-white";

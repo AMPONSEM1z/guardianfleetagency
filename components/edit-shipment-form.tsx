@@ -57,7 +57,7 @@ const getStatusColor = (status: string) => {
       return "bg-yellow-500 text-black";
     case "pending":
       return "bg-gray-500 text-white";
-    case "On Hold":
+    case "on hold":
       return "bg-red-500 text-white";
     default:
       return "bg-red-500 text-white";
@@ -188,7 +188,7 @@ export function EditShipmentForm({ shipment }: EditShipmentFormProps) {
                       Out for Delivery
                     </SelectItem>
                     <SelectItem value="delivered">Delivered</SelectItem>
-                    <SelectItem value="On Hold">On Hold</SelectItem>
+                    <SelectItem value="on hold">on hold</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
