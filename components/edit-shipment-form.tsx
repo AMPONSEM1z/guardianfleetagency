@@ -60,7 +60,7 @@ const getStatusColor = (status: string) => {
     case "On Hold":
       return "bg-red-500 text-white";
     default:
-      return "bg-gray-500 text-white";
+      return "bg-red-500 text-white";
   }
 };
 
